@@ -10,6 +10,7 @@ import { SlHandbag } from "react-icons/sl";
 // import "react-toastify/dist/ReactToastify.css";
 // import { toast, ToastContainer } from "react-toastify";
 // import { useProductId } from "../Context/Context";
+//
 const Heading = () => {
   const [selectedSection, setSelectedSection] = useState("men");
   const [showInputField, setShowInputField] = useState(false);

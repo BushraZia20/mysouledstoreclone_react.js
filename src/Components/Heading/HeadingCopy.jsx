@@ -16,7 +16,7 @@
 //   const [searchTerm, setSearchTerm] = useState("");
 //   const navigate = useNavigate();
 //   const token = localStorage.getItem("JWT_token");
-
+/////////
 //   //   const [selectedCategory, setSelectedCategory] = useState("men");
 
 //   const handleSearchChange = (e) => {
