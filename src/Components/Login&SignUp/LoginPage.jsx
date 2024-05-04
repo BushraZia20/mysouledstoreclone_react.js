@@ -43,10 +43,14 @@ const LoginPage = () => {
         // console.log(response);
 
         const data = await response.json();
-        localStorage.setItem("JWT_token", data.token);
-        // console.log(data.token);
-        console.log(data);
         navigate("/");
+        localStorage.setItem("JWT_token", data.token);
+        localStorage.setItem("name", data.data.user.name);
+        localStorage.setItem("email", data.data.user.email);
+        console.log("Name:", localStorage.getItem("name")); // Log name
+        console.log("Email:", localStorage.getItem("email")); // Log email
+        // console.log(data.token);
+        // console.log(data);
       }
     } catch (err) {
       console.error("");

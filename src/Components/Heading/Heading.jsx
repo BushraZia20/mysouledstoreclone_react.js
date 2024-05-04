@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import { SlHandbag } from "react-icons/sl";
+import OrderHistory from "../OrderHistory/OrderHistory";
 // import "react-toastify/dist/ReactToastify.css";
 // import { toast, ToastContainer } from "react-toastify";
 // import { useProductId } from "../Context/Context";
@@ -466,6 +467,8 @@ const Heading = () => {
                     onClick={() => {
                       if (item === "Logout") {
                         handleLogout();
+                      } else if (item === "Orders") {
+                        navigate("/orderhistory");
                       }
                     }}
                   >

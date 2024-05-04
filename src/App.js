@@ -10,10 +10,11 @@ import Cart from "./Components/Cart/Cart";
 import WishList from "./Components/WishList/WishList";
 import { ProductIdProvider } from "./Components/Context/Context";
 import SingleCategoryDetails from "./Components/SingleCategory/SingleCategoryDetails";
-
 import HomePageWomen from "./Components/HomePageWomen/HomePageWomen";
 import WomenCategoryDetails from "./Components/WomenSection/WomenCategoriesDetails/WomenCategoriesDetails";
 import AddAddressPage from "./Components/AddAddressPage/AddAddressPage";
+import PaymentPage from "./Components/PaymentPage/PaymentPage";
+import OrderHistory from "./Components/OrderHistory/OrderHistory";
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/wishlist" element={<WishList />} />
             <Route path="/delivery-address" element={<AddAddressPage />} />
+            <Route path="/payment" element={<PaymentPage />} />
+            <Route path="/orderhistory" element={<OrderHistory />} />
           </Route>
           <Route
             path="/getsinglecategorydetails/:category" //path of the category sent.
