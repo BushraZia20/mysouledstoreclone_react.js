@@ -238,6 +238,10 @@
   width: 100%;
 }
 
+.fa_user {
+  padding: 0;
+}
+
 .dropdown_contenr {
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
@@ -269,4 +273,12 @@
   color: black;
   font-weight: 700;
   /* Add any other styles you want for the selected div */
+}
+
+.icon_style {
+  color: black; /* Set the color of the icon to black */
+  background-color: white; /* Set the background color to white */
+  border: 1px solid black; /* Add a black border */
+  border-radius: 50%; /* Make the border rounded for circular shape */
+  padding: 5px; /* Adjust padding as needed */
 }

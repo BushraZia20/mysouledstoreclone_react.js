@@ -15,6 +15,7 @@ import WomenCategoryDetails from "./Components/WomenSection/WomenCategoriesDetai
 import AddAddressPage from "./Components/AddAddressPage/AddAddressPage";
 import PaymentPage from "./Components/PaymentPage/PaymentPage";
 import OrderHistory from "./Components/OrderHistory/OrderHistory";
+import SearchItems from "./Components/SearchPage/SearchItems";
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
             path="/womencategorydetails/:category"
             element={<WomenCategoryDetails />}
           />
+          <Route path="/search" element={<SearchItems />} />
         </Routes>
       </ProductIdProvider>
     </BrowserRouter>

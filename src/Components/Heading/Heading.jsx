@@ -6,7 +6,6 @@ import { FaRegUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
-import { SlHandbag } from "react-icons/sl";
 import OrderHistory from "../OrderHistory/OrderHistory";
 // import "react-toastify/dist/ReactToastify.css";
 // import { toast, ToastContainer } from "react-toastify";
@@ -210,7 +209,9 @@ const Heading = () => {
           <div className="small_div sm_div_color">KIDS</div>
         </div>
         <div className="sub_div_2_menu">
-          <div className="small_div">TRACK ORDER</div>
+          <Link to="/search" className="small_div">
+            TRACK ORDER
+          </Link>
           <div className="small_div">CONTACT US</div>
           <div className="small_div">DOWNLOAD APP</div>
         </div>
@@ -435,7 +436,7 @@ const Heading = () => {
           </div>
 
           <div
-            className="sub_div_2_small_divs"
+            className="sub_div_2_small_divs fa_user"
             // onMouseEnter={() => setActiveDropdown("profileMenu")}
             onMouseEnter={() => {
               if (token) {
@@ -451,9 +452,10 @@ const Heading = () => {
               }}
             >
               {" "}
-              <FaRegUser
+              {/* <FaRegUser
                 style={{ height: "100%", width: "100%", color: "black" }}
-              />
+              /> */}
+              <i class="fa fa-user-o" style={{ fontSize: "24px" }}></i>
             </div>
             {activeDropdown === "profileMenu" && (
               <div
@@ -484,10 +486,10 @@ const Heading = () => {
             // bodyClassName="red-toast-body"
           /> */}
           <Link to="/wishlist">
-            <CiHeart />
+            <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
           </Link>
           <Link to="/cart">
-            <SlHandbag />
+            <i class="fa fa-shopping-bag" style={{ fontSize: "24px" }}></i>
           </Link>
         </div>
       </div>
