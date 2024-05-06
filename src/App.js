@@ -46,7 +46,7 @@ function App() {
             path="/womencategorydetails/:category"
             element={<WomenCategoryDetails />}
           />
-          <Route path="/search" element={<SearchItems />} />
+          <Route path="/search/:term" element={<SearchItems />} />
         </Routes>
       </ProductIdProvider>
     </BrowserRouter>

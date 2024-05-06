@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CiHeart } from "react-icons/ci";
 import OrderHistory from "../OrderHistory/OrderHistory";
+
 // import "react-toastify/dist/ReactToastify.css";
 // import { toast, ToastContainer } from "react-toastify";
 // import { useProductId } from "../Context/Context";
@@ -26,7 +27,13 @@ const Heading = () => {
 
   const handleSubmitSearch = () => {
     if (searchTerm.trim()) {
-      navigate(`/getsinglecategorydetails/${searchTerm}`);
+      navigate(`/search/${searchTerm}`); // sending param to searchItems component
+    }
+  };
+
+  const handlekeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmitSearch();
     }
   };
 
@@ -209,7 +216,7 @@ const Heading = () => {
           <div className="small_div sm_div_color">KIDS</div>
         </div>
         <div className="sub_div_2_menu">
-          <Link to="/search" className="small_div">
+          <Link to="/orderhistory" className="small_div">
             TRACK ORDER
           </Link>
           <div className="small_div">CONTACT US</div>
@@ -427,7 +434,8 @@ const Heading = () => {
                 placeholder="What are you looking for?"
                 value={searchTerm}
                 onChange={handleSearchChange}
-                onKeyPress={(e) => e.key === "Enter" && handleSubmitSearch()}
+                onKeyPress={handlekeyPress}
+                // onClick={handleSubmitSearch}
               />
             )}
             <div className="search_icons" onClick={handleSubmitSearch}>

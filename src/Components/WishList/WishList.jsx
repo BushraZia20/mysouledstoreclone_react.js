@@ -3,7 +3,7 @@ import "./WishList.css";
 import { token } from "../util/Util";
 import { projectId } from "../util/Util";
 import { Link, useNavigate } from "react-router-dom";
-import EmptyWishList from "../../Assets/EmptyWishList.png"
+import EmptyWishList from "../../Assets/EmptyWishList.png";
 import { useProductId } from "../Context/Context";
 
 const WishList = () => {
@@ -126,12 +126,19 @@ const WishList = () => {
                   }}
                 ></div>
                 <div
-                  style={{ display: "flex", gap: "10px", alignItems: "center" }}
+                  style={{
+                    display: " flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    height: "25px",
+                    fontSize: "13px",
+                    color: "#585c70",
+                  }}
                 >
                   <p>
                     <strong>₹ {items.products.price}</strong>
                   </p>
-                  <p style={{ fontSize: "15px", color: "#73757B" }}>
+                  <p style={{ fontSize: "14px", color: "#73757B" }}>
                     MRP incl. of all taxes
                   </p>
                 </div>

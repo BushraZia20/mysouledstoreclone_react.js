@@ -190,7 +190,14 @@ const SingleCategoryDetails = () => {
                   }}
                 ></div>
                 <div
-                  style={{ display: "flex", gap: "10px", alignItems: "center" }}
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    alignItems: "center",
+                    height: "25px",
+                    fontSize: "13.5px",
+                    color: "#585c70",
+                  }}
                 >
                   <p>
                     <strong style={{ color: "#58595B" }}>
