@@ -93,3 +93,29 @@
 .CatagoriesForMan__content__top:hover .CatagoriesForMan__content--image-1 {
   transform: scale(1.1);
 } */
+@media only Screen and (max-width: 600px) {
+  .women__top__categories {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .CatagoriesForWomen__content__top {
+    width: 25em;
+    height: 325px;
+    overflow: hidden;
+  }
+  .women__mid__categories {
+    display: flex;
+    margin-top: 20px;
+    gap: 10px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+  .CategoriesForWomen__content__mid {
+    height: 325px;
+    width: 25em;
+    overflow: hidden;
+  }
+}

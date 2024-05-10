@@ -185,3 +185,25 @@ button {
   height: 29em;
   width: 100%;
 }*/
+
+@media only Screen and (max-width: 600px) {
+  .hidden_divs_media_query {
+    display: none;
+  }
+  .carousel_container {
+    height: 240px;
+    width: 98vw;
+    max-width: 100%;
+    overflow: hidden;
+    margin-left: 7px;
+  }
+  .men_carousel_btn {
+    height: 60px;
+    width: 59px;
+    position: absolute;
+    top: 20%;
+    border: none;
+    background-color: transparent;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 1);
+  }
+}

@@ -11,3 +11,16 @@
 .newArrivals_next_btn {
   right: 0;
 }
+@media only screen and (max-width: 600px) {
+  /* .newArrivals_btn {
+    left: 27em;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 2805px;
+  } */
+  .newArrivals_next_btn {
+    right: 0;
+    left: 28em;
+  }
+}

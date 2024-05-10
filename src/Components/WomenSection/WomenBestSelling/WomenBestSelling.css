@@ -11,3 +11,14 @@
 .women_bestSelling_next_btn {
   right: 0;
 }
+@media only Screen and (max-width: 600px) {
+  .women_bestSelling_next_btn {
+    right: 0;
+    left: 28em;
+    top: 4805px;
+  }
+
+  .women_bestSelling_prev_btn {
+    top: 4805px;
+  }
+}

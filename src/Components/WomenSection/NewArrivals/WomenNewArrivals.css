@@ -29,3 +29,13 @@
 .zoomable_image:hover {
   transform: scale(1.1);
 }
+@media only Screen and (max-width: 600px) {
+  .women_newArrivals_next_btn {
+    right: 0;
+    left: 28em;
+    top: 2797px;
+  }
+  .women_newArrivals_prev_btn {
+    top: 2797px;
+  }
+}

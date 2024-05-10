@@ -11,3 +11,9 @@
 .trending_next_btn {
   right: 0;
 }
+@media only Screen and (max-width: 600px) {
+  .trending_next_btn {
+    right: 0;
+    left: 28em;
+  }
+}

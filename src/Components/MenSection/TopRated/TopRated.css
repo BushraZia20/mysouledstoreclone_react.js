@@ -75,3 +75,17 @@
 .toprated_next_btn {
   right: 0;
 }
+
+@media only screen and (max-width: 600px) {
+  /* .toprated_btn {
+    left: 27em;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 2140px;
+  } */
+  .toprated_next_btn {
+    right: 0;
+    left: 28em;
+  }
+}

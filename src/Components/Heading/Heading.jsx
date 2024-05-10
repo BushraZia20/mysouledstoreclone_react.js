@@ -213,14 +213,17 @@ const Heading = () => {
           >
             MEN
           </Link>
-          <div className="small_div sm_div_color">KIDS</div>
+          {/* <div className="small_div sm_div_color">KIDS</div> */}
         </div>
         <div className="sub_div_2_menu">
-          <Link to="/orderhistory" className="small_div">
+          <Link
+            to="/orderhistory"
+            className="small_div hidden_divs_media_query"
+          >
             TRACK ORDER
           </Link>
-          <div className="small_div">CONTACT US</div>
-          <div className="small_div">DOWNLOAD APP</div>
+          <div className="small_div hidden_divs_media_query">CONTACT US</div>
+          <div className="small_div hidden_divs_media_query">DOWNLOAD APP</div>
         </div>
       </div>
       <div className="sub_div_2">
@@ -274,12 +277,11 @@ const Heading = () => {
                 </div>
               )}
             </div>
-            <div className="sub_div_2_small_divs">
+            {/* <div className="sub_div_2_small_divs">
               <strong>SNEAKERS</strong>
-            </div>
-
+            </div> */}
             <div
-              className="sub_div_2_small_divs"
+              className="sub_div_2_small_divs hidden_divs_media_query"
               onMouseEnter={() => setActiveDropdown("accessories")}
             >
               <strong>ACCESSORIES</strong>
@@ -318,9 +320,9 @@ const Heading = () => {
             {/* <div className="sub_div_2_small_divs">
               <strong>SHOP BY THEMES</strong>
             </div> */}
-            <div className="sub_div_2_small_divs">
+            {/* <div className="sub_div_2_small_divs">
               <strong>MEMBERSHIP</strong>
-            </div>
+            </div> */}
           </div>
         )}
 
@@ -371,12 +373,12 @@ const Heading = () => {
                 </div>
               )}
             </div>
-            <div className="sub_div_2_small_divs">
+            {/* <div className="sub_div_2_small_divs hidden_divs_media_query">
               <strong>SNEAKERS</strong>
-            </div>
+            </div> */}
 
             <div
-              className="sub_div_2_small_divs"
+              className="sub_div_2_small_divs hidden_divs_media_query"
               onMouseEnter={() => setActiveDropdown("accessories")}
             >
               <strong>ACCESSORIES</strong>
@@ -412,12 +414,12 @@ const Heading = () => {
                 </div>
               )}
             </div>
-            <div className="sub_div_2_small_divs">
+            {/* <div className="sub_div_2_small_divs">
               <strong>SHOP BY THEMES</strong>
             </div>
             <div className="sub_div_2_small_divs">
               <strong>MEMBERSHIP</strong>
-            </div>
+            </div> */}
           </div>
         )}
 
@@ -493,10 +495,10 @@ const Heading = () => {
             toastClassName="red-toast"
             // bodyClassName="red-toast-body"
           /> */}
-          <Link to="/wishlist">
+          <Link to="/wishlist" className="fa_wishlist">
             <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
           </Link>
-          <Link to="/cart">
+          <Link to="/cart" className="fa_cart">
             <i class="fa fa-shopping-bag" style={{ fontSize: "24px" }}></i>
           </Link>
         </div>
