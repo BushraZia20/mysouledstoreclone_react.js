@@ -15,5 +15,9 @@
   .trending_next_btn {
     right: 0;
     left: 28em;
+    top: 5266px;
+  }
+  .trending_prev_btn {
+    top: 5266px;
   }
 }

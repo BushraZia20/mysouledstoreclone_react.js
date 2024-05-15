@@ -15,5 +15,9 @@
   .bestSelling_next_btn {
     right: 0;
     left: 28em;
+    top: 5945px;
+  }
+  .bestSelling_prev_btn {
+    top: 5945px;
   }
 }

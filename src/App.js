@@ -16,6 +16,7 @@ import AddAddressPage from "./Components/AddAddressPage/AddAddressPage";
 import PaymentPage from "./Components/PaymentPage/PaymentPage";
 import OrderHistory from "./Components/OrderHistory/OrderHistory";
 import SearchItems from "./Components/SearchPage/SearchItems";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
           <Route path="/search/:term" element={<SearchItems />} />
         </Routes>
       </ProductIdProvider>
+      <Footer />
     </BrowserRouter>
   );
 }

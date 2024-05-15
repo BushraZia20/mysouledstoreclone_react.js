@@ -80,14 +80,42 @@
 .CatagoriesForMan__content__top:hover .CatagoriesForMan__content--image-1 {
   transform: scale(1.1);
 }
-/* @media only Screen and (max-width: 600px) {
-  .CatagoriesForMan__Parent--section {
-    padding: 7px;
-  }
+@media only Screen and (max-width: 600px) {
   .top__categories {
+    /* border: 1px solid red; */
+    /* border: 1px solid red; */
     display: flex;
-    height: 25em;
-    justify-content: space-evenly;
+    height: 63em;
+    /* justify-content: space-evenly; */
     flex-direction: column;
+  }
+  .CatagoriesForMan__content--image-1 {
+    width: 100%;
+    /* height: auto; */
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+  .CatagoriesForMan__content__top {
+    overflow: hidden;
+    width: 25em;
+    height: 325px;
+    overflow: hidden;
+    margin-left: 6px;
+  }
+  .CatagoriesForMan__content--section {
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    flex-direction: column;
+    /* height: 84em; */
+  }
+
+  .CatagoriesForMan__content {
+    display: flex;
+    overflow: hidden;
+    margin: 3px;
+    margin-bottom: 9px;
+    width: 98%;
+    height: 257px;
+  }
 }
-} */

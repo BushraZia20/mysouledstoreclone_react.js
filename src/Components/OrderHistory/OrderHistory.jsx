@@ -170,7 +170,7 @@ const OrderHistory = () => {
             <div>TSS Money (TSS Money Balance: ₹ 0.00)</div>
             <div>Saved Cards</div>
             <div>FAQs</div>
-            <div>Profile</div>
+            <div style={{ borderBottom: "1px solid #7f7f7f" }}>Profile</div>
           </div>
           <button onClick={handleLogout} className="logout_btn">
             LOGOUT
@@ -198,11 +198,19 @@ const OrderHistory = () => {
                     />
                   </div>
                   <div className="details">
-                    <p>{order.order.items[0].product.name}</p>
-                    <p>
+                    <p style={{ color: "#58595b", fontSize: "14px" }}>
+                      {order.order.items[0].product.name}
+                    </p>
+                    <p
+                      style={{
+                        color: "#58595b",
+                        fontSize: "14px",
+                        fontWeight: "600",
+                      }}
+                    >
                       <strong>Order Placed</strong>
                     </p>
-                    <p>
+                    <p style={{ fontSize: "13px", fontWeight: "400" }}>
                       Deliver to: {order.order.shipmentDetails.address.street},{" "}
                       {order.order.shipmentDetails.address.city},{" "}
                       {order.order.shipmentDetails.address.state},{" "}

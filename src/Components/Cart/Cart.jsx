@@ -167,7 +167,10 @@ function Cart() {
                     />
                   </div>
                   <div className="each_cart_item_details">
-                    <h3 style={{ fontSize: "14px", color: "#58595B" }}>
+                    <h3
+                      className="cart_item_details_h3_media_query"
+                      style={{ fontSize: "14px", color: "#58595B" }}
+                    >
                       {item.product.name}
                     </h3>
                     <p>Size: {item.size}</p>
@@ -177,7 +180,10 @@ function Cart() {
                     <p style={{ marginBottom: "0" }}>
                       <strong>₹ {item.product.price}</strong>
                     </p>
-                    <p style={{ margin: "0", fontSize: "13px" }}>
+                    <p
+                      className="cart_items_price_mrp_media_query"
+                      style={{ margin: "0", fontSize: "13px" }}
+                    >
                       <strong style={{ color: "#58595B" }}>
                         MRP incl. of all taxes
                       </strong>

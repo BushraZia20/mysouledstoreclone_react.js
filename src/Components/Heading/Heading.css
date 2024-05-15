@@ -339,13 +339,16 @@
     /* height: 25px; */
     font-size: 22px;
     /* width: 25px; */
+    color: #ebe5e5 !important;
   }
 
   .fa_wishlist {
     font-size: 22px;
+    color: #ebe5e5 !important;
   }
   .fa_cart {
     font-size: 22px;
+    color: #ebe5e5 !important;
   }
   .sub_div_2_categories {
     display: flex;

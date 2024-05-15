@@ -136,7 +136,9 @@ const SingleProductDetails = () => {
     <div className="single_product_details">
       <div className="sinlge_product_images_div">
         {productImage.map((image, index) => (
-          <img key={index} src={image} alt="" />
+          <div className="mapped_product_img_div">
+            <img key={index} src={image} alt="" />
+          </div>
         ))}
       </div>
       <div className="single_product_details_div">
@@ -191,6 +193,7 @@ const SingleProductDetails = () => {
         </div>
         <div className="add_to_whislist_div">
           <button
+            className="single_product_details_buttons_media_query"
             style={{
               backgroundColor: "#EC3D25",
               width: "18em",
@@ -203,6 +206,7 @@ const SingleProductDetails = () => {
             ADD TO CART
           </button>
           <button
+            className="single_product_details_buttons_media_query"
             style={{
               backgroundColor: "transparent",
               width: "14em",

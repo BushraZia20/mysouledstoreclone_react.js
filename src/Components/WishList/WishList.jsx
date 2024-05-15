@@ -96,7 +96,7 @@ const WishList = () => {
   return (
     <div className="wishlist_container">
       {wishlistData.length > 0 ? (
-        <h3>
+        <h3 className="wishlist_h3_media_query">
           <strong>My WishList ({results}items)</strong>
         </h3>
       ) : (
@@ -126,6 +126,7 @@ const WishList = () => {
                   }}
                 ></div>
                 <div
+                  className="wishlist_price_media_query"
                   style={{
                     display: " flex",
                     gap: "10px",
@@ -153,7 +154,9 @@ const WishList = () => {
           ))
         ) : (
           <div className="empty_wishlist_div">
-            <img src={EmptyWishList} alt="" />
+            <div className="empty_wishlist_img_div_media_query">
+              <img src={EmptyWishList} alt="" />
+            </div>
             <Link to="/">
               <button>CONTINUE SHOPPING</button>
             </Link>

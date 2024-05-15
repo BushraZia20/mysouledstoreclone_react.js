@@ -22,5 +22,9 @@
   .newArrivals_next_btn {
     right: 0;
     left: 28em;
+    top: 4593px;
+  }
+  .newArrivals_prev_btn {
+    top: 4593px;
   }
 }

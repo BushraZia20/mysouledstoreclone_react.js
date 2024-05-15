@@ -495,10 +495,14 @@ const Heading = () => {
             toastClassName="red-toast"
             // bodyClassName="red-toast-body"
           /> */}
-          <Link to="/wishlist" className="fa_wishlist">
+          <Link
+            to="/wishlist"
+            style={{ color: "#58595b" }}
+            className="fa_wishlist"
+          >
             <i class="fa fa-heart-o" style={{ fontSize: "24px" }}></i>
           </Link>
-          <Link to="/cart" className="fa_cart">
+          <Link to="/cart" style={{ color: "#58595b" }} className="fa_cart">
             <i class="fa fa-shopping-bag" style={{ fontSize: "24px" }}></i>
           </Link>
         </div>

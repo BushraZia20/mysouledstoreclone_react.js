@@ -87,5 +87,9 @@
   .toprated_next_btn {
     right: 0;
     left: 28em;
+    top: 3938px;
+  }
+  .toprated_prev_btn {
+    top: 3938px;
   }
 }

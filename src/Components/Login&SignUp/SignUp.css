@@ -93,3 +93,67 @@
   color: white;
   font-size: 15px;
 }
+@media only Screen and (max-width: 600px) {
+  .signUp_main_inner_div {
+    background-color: white;
+    width: 100%;
+    margin-top: 0 !important;
+  }
+  .sign_up_btn {
+    border: 1px solid #c5c5c5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 82.5%;
+    margin-left: 35px;
+  }
+  .signUp_with_div {
+    margin-top: 30px;
+    margin-left: 12px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 37px;
+    width: 308px;
+  }
+  .input_signUp_details_div input {
+    height: 35px;
+    width: 22.5em;
+    border-radius: 13px;
+    border: 1px solid #cdcdce;
+    padding: 0 10px;
+  }
+  .submit_login_btn {
+    height: 45px;
+    width: 315px !important;
+    border-radius: 13px !important;
+    border: none;
+    background-color: #ed2d2f;
+    color: white;
+    font-size: 15px;
+  }
+  .firstLast_name {
+    height: 35px;
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 10px;
+    width: 20em;
+    /* margin-left: 5px; */
+    /* margin-right: 3px; */
+  }
+  .firstLast_name input {
+    width: 10em;
+    padding: 0 10px;
+  }
+  .submit_register_btn {
+    height: 45px;
+    width: 315px;
+    border-radius: 13px;
+    border: none;
+    background-color: #117a7a;
+    color: white;
+    font-size: 15px;
+  }
+}

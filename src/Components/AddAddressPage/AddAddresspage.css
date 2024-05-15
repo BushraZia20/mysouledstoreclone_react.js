@@ -159,3 +159,48 @@
   border: none;
   background-color: #eb3e25;
 }
+/* @media only Screen and (max-width: 600px) {
+
+} */
+
+@media only screen and (max-width: 600px) {
+  .address_div {
+    height: 340px;
+    width: 100%;
+  }
+  .add_address_img {
+    height: 15em;
+    width: 100%;
+  }
+  .form_box {
+    width: 90%; /* Adjust width for smaller screens */
+    padding: 10px; /* Adjust padding for smaller screens */
+  }
+  .enter_your_name_div {
+    flex-direction: column; /* Stack inputs vertically on smaller screens */
+  }
+  .enter_name,
+  /* .enter_district, */
+  .enter_address {
+    width: 100%; /* Adjust input width for smaller screens */
+  }
+  .enter_name input,
+  .enter_address input,
+  /* .enter_area input, */
+  /* .enter_country_child input, */
+  .enter_phnNo input {
+    width: 100%; /* Ensure input width fills container */
+  }
+  .enter_district {
+    width: 106%;
+  }
+  .enter_area {
+    width: 48%;
+  }
+  .enter_country {
+    width: 102%;
+  }
+  /* .enter_country_child {
+    width: 45%;
+  } */
+}
