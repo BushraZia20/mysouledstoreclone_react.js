@@ -58,9 +58,12 @@ function WomenCategories() {
   return (
     <>
       <section className="categories_for_women">
-        <h3 style={{ margin: "0" }} className="catagoriesForWomen_text">
+        <h2
+          style={{ fontSize: "23px", textAlign: "center" }}
+          className="catagoriesForWomen_text"
+        >
           CATEGORIES
-        </h3>
+        </h2>
         <div className="women__top__categories">
           {categoriesData.slice(0, 3).map((categories, index) => (
             <Link

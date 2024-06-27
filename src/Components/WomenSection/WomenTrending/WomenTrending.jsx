@@ -10,7 +10,7 @@ const WomenTrending = () => {
 
   const fetchData = async () => {
     try {
-      const limit = 1000;
+      const limit = 50;
       const url = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search={"gender":"Women"}&limit=${limit}`;
       const options = {
         method: "GET",
@@ -34,9 +34,10 @@ const WomenTrending = () => {
   }, []);
 
   const prevSlides = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + womenData.length) % womenData.length
-    );
+    // setCurrentIndex(
+    //   (prevIndex) => (prevIndex - 1 + womenData.length) % womenData.length
+    // );
+    setCurrentIndex((nextIndex) => (nextIndex + 4) % womenData.length);
   };
   const nextSlides = () => {
     setCurrentIndex((nextIndex) => (nextIndex + 1) % womenData.length);

@@ -40,7 +40,7 @@ function App() {
             <Route path="/orderhistory" element={<OrderHistory />} />
           </Route>
           <Route
-            path="/getsinglecategorydetails/:category" //path of the category sent.
+            path="/getsinglecategorydetails/:category" //path of the category name sent.
             element={<SingleCategoryDetails />}
           />
           <Route

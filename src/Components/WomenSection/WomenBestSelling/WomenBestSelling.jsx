@@ -10,7 +10,7 @@ const WomenBestSelling = () => {
 
   const fetchData = async () => {
     try {
-      const limit = 1000;
+      const limit = 50;
       const url = `https://academics.newtonschool.co/api/v1/ecommerce/clothes/products?search={"gender":"Women"}&limit=${limit}`;
       const options = {
         method: "GET",
@@ -39,7 +39,7 @@ const WomenBestSelling = () => {
     );
   };
   const nextSlides = () => {
-    setCurrentIndex((nextIndex) => (nextIndex + 1) % womenData.length);
+    setCurrentIndex((nextIndex) => (nextIndex + 4) % womenData.length);
   };
 
   const slideStyle = {

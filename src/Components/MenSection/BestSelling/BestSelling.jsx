@@ -46,13 +46,14 @@ const BestSelling = () => {
 
   const nextSlide = () => {
     console.log("nextBtn is clicked");
+    // setCurrentIndex((nextIndex) => (nextIndex + 4) % menData.length);
     setCurrentIndex((nextIndex) =>
-      nextIndex === menData.length - 1 ? 0 : nextIndex + 1
+      nextIndex === menData.length - 4 ? 0 : nextIndex + 1
     );
   };
 
   const slideStyle = {
-    transform: `translateX(-${currentIndex * 75}%)`,
+    transform: `translateX(-${currentIndex * 100}%)`,
   };
   return (
     <div>

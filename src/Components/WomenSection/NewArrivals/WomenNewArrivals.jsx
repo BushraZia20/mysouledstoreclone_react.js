@@ -48,9 +48,10 @@ const WomenNewArrivals = () => {
 
   const nextSlide = () => {
     console.log("prevBtn is clicked");
-    setCurrentIndex((nextIndex) =>
-      nextIndex === womenData.length - 1 ? 0 : nextIndex + 1
-    );
+    // setCurrentIndex((nextIndex) =>
+    //   nextIndex === womenData.length - 4 ? 0 : nextIndex + 1
+    // );
+    setCurrentIndex((nextIndex) => (nextIndex + 4) % womenData.length);
   };
 
   const slideStyle = {

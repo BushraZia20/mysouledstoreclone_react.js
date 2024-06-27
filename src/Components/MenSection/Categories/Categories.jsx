@@ -50,7 +50,12 @@ function Categories() {
   return (
     <section className="CatagoriesForMan__Parent--section">
       <section className="CatagoriesForMan__child--section">
-        <h3 className="CatagoriesForMan_text">CATAGORIES</h3>
+        <h2
+          style={{ fontSize: "23px", textAlign: "center" }}
+          className="CatagoriesForMan_text"
+        >
+          CATAGORIES
+        </h2>
         <div className="top__categories">
           {categoriesData.slice(0, 3).map((category, index) => (
             <Link
