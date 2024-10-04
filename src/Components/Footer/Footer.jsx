@@ -17,8 +17,6 @@ const Footer = () => {
       <div className="Footer_img_3">
         <img src={FooterImage_3} alt="" />
       </div>
-      <IoIosHeartEmpty />
-      <IoMdHeart />
     </div>
   );
 };
