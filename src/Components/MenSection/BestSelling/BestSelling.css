@@ -14,10 +14,10 @@
 @media only screen and (max-width: 600px) {
   .bestSelling_next_btn {
     right: 0;
-    left: 28em;
-    top: 5945px;
+    left: 25.5em;
+    top: 5940px;
   }
   .bestSelling_prev_btn {
-    top: 5945px;
+    top: 5940px;
   }
 }

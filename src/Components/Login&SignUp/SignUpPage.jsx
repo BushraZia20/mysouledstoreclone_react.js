@@ -11,6 +11,7 @@ const SignUpPage = () => {
   const [mailId, setMailId] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
   const navigate = useNavigate(); //aato-navigate to a page after a specific task.
 
@@ -30,11 +31,37 @@ const SignUpPage = () => {
     setConfirmPassword(e.target.value);
   };
 
-  async function signUp() {
-    if (password !== confirmPassword) {
-      console.log("psswrd do not match");
-      // return;
+  const validateForm = () => {
+    const formErrors = {};
+
+    //fname and lastname validation
+    if (!fname.trim() || !lastName.trim())
+      formErrors.fname = "Required mandatory fields";
+
+    //email validation
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!mailId.trim()) {
+      formErrors.mailId = "Required mandatory fields";
+    } else if (!regex.test(mailId)) {
+      formErrors.mailId = "Invalid email format";
     }
+
+    // password validation
+    if (!password.trim()) {
+      formErrors.password = "Required mandatory fields";
+    } else if (!confirmPassword.trim()) {
+      formErrors.confirmPassword = "Required mandatory fields";
+    } else if (password.length < 4) {
+      formErrors.password = "Password must be atleast 4 characters";
+    } else if (password !== confirmPassword) {
+      formErrors.confirmPassword = "Passwords do not match";
+    }
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
+  async function signUp() {
+    if (!validateForm()) return;
 
     try {
       const response = await fetch(
@@ -109,24 +136,33 @@ const SignUpPage = () => {
                 value={lastName}
               />
             </div>
+            {errors.fname && <p className="error_msg">{errors.fname}</p>}
             <input
               type="text"
               placeholder="E-mail ID"
               onChange={handleMail}
               value={mailId}
             />
+            {errors.mailId && <p className="error_msg">{errors.mailId}</p>}
+
             <input
               type="text"
               placeholder="Choose New Password"
               onChange={handlePassword}
               value={password}
             />
+            {errors.password && <p className="error_msg">{errors.password}</p>}
+
             <input
               type="text"
               placeholder="Confirm New Password"
               onChange={handleConfirmPassword}
               value={confirmPassword}
             />
+
+            {errors.confirmPassword && (
+              <p className="error_msg">{errors.confirmPassword}</p>
+            )}
 
             <button className="submit_register_btn" onClick={signUp}>
               REGISTER

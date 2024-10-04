@@ -14,10 +14,10 @@
 @media only Screen and (max-width: 600px) {
   .trending_next_btn {
     right: 0;
-    left: 28em;
-    top: 5266px;
+    left: 25.5em;
+    top: 5265px;
   }
   .trending_prev_btn {
-    top: 5266px;
+    top: 5265px;
   }
 }

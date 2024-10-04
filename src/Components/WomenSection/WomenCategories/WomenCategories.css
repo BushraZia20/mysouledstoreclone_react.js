@@ -115,7 +115,7 @@
   }
   .CategoriesForWomen__content__mid {
     height: 325px;
-    width: 25em;
+    width: 100%;
     overflow: hidden;
   }
 }

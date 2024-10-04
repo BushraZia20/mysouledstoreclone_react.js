@@ -3,7 +3,6 @@
   width: 98vw;
   max-width: 100%;
   overflow: hidden;
-  margin-left: 7px;
 }
 .carousel_slide {
   height: 100%;
@@ -61,5 +60,8 @@
 @media only Screen and (max-width: 600px) {
   .hidden_divs_media_query {
     display: none;
+  }
+  .carousel_container {
+    margin-left: 0;
   }
 }

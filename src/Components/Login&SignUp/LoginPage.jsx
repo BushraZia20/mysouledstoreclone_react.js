@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginPage = () => {
   const [mailId, setMailId] = useState("");
   const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState({});
 
   const navigate = useNavigate();
 
@@ -17,12 +18,35 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
+  const validateForm = () => {
+    const formErrors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Corrected email validation regex
+
+    // Email validation
+    if (!mailId.trim()) {
+      formErrors.mailId = "Required mandatory fields";
+    } else if (!regex.test(mailId)) {
+      formErrors.mailId = "Invalid email format";
+    }
+
+    // Password validation
+    if (!password.trim()) {
+      formErrors.password = "Required mandatory fields";
+    } else if (password.length < 4) {
+      formErrors.password = "Password must be at least 4 characters";
+    }
+
+    setErrors(formErrors);
+    return Object.keys(formErrors).length === 0;
+  };
+
   async function login() {
     // if (password !== confirmPassword) {
     //   console.log("psswrd do not match");
     //   // return;
     // }
 
+    if (!validateForm()) return;
     try {
       const response = await fetch(
         `https://academics.newtonschool.co/api/v1/user/login`,
@@ -93,12 +117,14 @@ const LoginPage = () => {
               onChange={handleMail}
               value={mailId}
             />
+            {errors.mailId && <p className="error_msg">{errors.mailId}</p>}
             <input
               type="text"
               placeholder="Enter Password"
               onChange={handleEnterPassword}
               value={password}
             />
+            {errors.password && <p className="error_msg">{errors.password}</p>}
             <button className="submit_login_btn" onClick={login}>
               PROCEED
             </button>

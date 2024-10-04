@@ -88,6 +88,7 @@
     height: 63em;
     /* justify-content: space-evenly; */
     flex-direction: column;
+    width: 100%;
   }
   .CatagoriesForMan__content--image-1 {
     width: 100%;
@@ -97,10 +98,11 @@
   }
   .CatagoriesForMan__content__top {
     overflow: hidden;
-    width: 25em;
+    width: 97.5%;
     height: 325px;
     overflow: hidden;
-    margin-left: 6px;
+    margin-left: 5px;
+    /* padding: 0px; */
   }
   .CatagoriesForMan__content--section {
     display: flex;

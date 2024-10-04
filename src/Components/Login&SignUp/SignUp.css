@@ -59,13 +59,13 @@
   border-radius: 10px;
 }
 .input_signUp_details_div {
-  /* border: 1px solid red; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   row-gap: 1em;
   padding: 20px 0;
+  position: relative;
 }
 .input_signUp_details_div input {
   height: 35px;
@@ -73,7 +73,17 @@
   border-radius: 13px;
   border: 1px solid #cdcdce;
   padding: 0 10px;
+  margin-bottom: 5px; /* Added space for error messages */
 }
+.error_msg {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px; /* Adjust to make sure the error is closer to the input */
+  margin-bottom: 10px; /* Creates space between error and next input */
+  text-align: left;
+  width: 23.5em; /* Match input width */
+}
+
 .firstLast_name {
   height: 35px;
   display: flex;
@@ -119,11 +129,13 @@
     width: 308px;
   }
   .input_signUp_details_div input {
-    height: 35px;
     width: 22.5em;
-    border-radius: 13px;
-    border: 1px solid #cdcdce;
-    padding: 0 10px;
+    margin-bottom: 5px; /* Space for error messages */
+  }
+  .error_msg {
+    width: 22.5em; /* Match input width on mobile */
+    margin-top: -5px;
+    margin-bottom: 10px;
   }
   .submit_login_btn {
     height: 45px;
