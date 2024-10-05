@@ -15,6 +15,11 @@ const SingleCategoryDetails = () => {
   const [selectedSize, setSelectedSize] = useState([]);
   const [sortOption, setSortOption] = useState("");
 
+  //changes - 1
+  const [isMobile, setIsMobile] = useState(false);
+  const [showMobileFilters, setShowMobileFilters] = useState(false);
+  const [showMobileSorting, setShowMobileSorting] = useState(false);
+
   //for the IMAGE at the top of the singleCategory page
   const getCategoryImage = (category) => {
     const categoryImage = imgUrl.find((img) => img.name === category);
@@ -63,12 +68,6 @@ const SingleCategoryDetails = () => {
         menProducts = menProducts.filter((p) => selectedSize.includes(p.size));
       }
 
-      // if (selectedSize) {
-      //   menProducts = menProducts.filter((p) =>
-      //     p.size.includes(selectedSize)
-      //   );
-      // }
-      //setBrands
       setBrands(
         Array.from(
           //1- this is to remove duplicates of the array.
@@ -79,17 +78,6 @@ const SingleCategoryDetails = () => {
           )
         )
       );
-
-      //setSizes
-      // setSizes(
-      //   Array.from(
-      //     new Set(
-      //       data.data
-      //         .filter((item) => item.gender === "Men" && item.size)
-      //         .map((item) => item.size)
-      //     )
-      //   )
-      // );
 
       if (selectedBrand) {
         menProducts = menProducts.filter((p) => p.brand === selectedBrand); //if brands selected menProducts will filter only those brands.
@@ -104,82 +92,187 @@ const SingleCategoryDetails = () => {
     fetchCategoryProducts();
   }, [category, selectedBrand, selectedSize, sortOption]);
 
+  //changes - 2
+  // Handle window resize to detect mobile view
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener to resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup on unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div>
       <div className="category_image">
         <img src={getCategoryImage(category)} alt={category} />
       </div>
+
       <div className="divided_page">
-        <div className="left_part">
-          {/* <h5>
-            <strong>PRODUCTS</strong>
-          </h5>
-          <input
-            className="search_for_products"
-            type="text"
-            placeholder="Search for Products"
-          /> */}
-          <div className="category_checkbox_div">
-            <h2
-              className="single_category_details_h3_media_query"
-              style={{ color: "#58595B" }}
-            >
-              Brands
-            </h2>
-            <div className="single_category_details_brands_media_query">
-              {brands.map((brand) => (
-                <div key={brand}>
-                  <input
-                    type="checkbox"
-                    id={brand}
-                    value={brand}
-                    onChange={handleBrandChange}
-                    checked={selectedBrand === brand}
-                  />
-                  <label htmlFor={brand}>{brand}</label>
-                </div>
-              ))}
+        {!isMobile ? (
+          <div className="left_part">
+            <div className="category_checkbox_div">
+              <h2
+                className="single_category_details_h3_media_query"
+                style={{ color: "#58595B" }}
+              >
+                Brands
+              </h2>
+              <div className="single_category_details_brands_media_query">
+                {brands.map((brand) => (
+                  <div key={brand}>
+                    <input
+                      type="checkbox"
+                      id={brand}
+                      value={brand}
+                      onChange={handleBrandChange}
+                      checked={selectedBrand === brand}
+                    />
+                    <label htmlFor={brand}>{brand}</label>
+                  </div>
+                ))}
+              </div>
+              <div
+                style={{
+                  backgroundColor: "#58595B",
+                  height: "0.5px",
+                  width: "95%",
+                  marginTop: "17px",
+                }}
+              ></div>
+              <h3
+                className="single_category_details_h3_media_query"
+                style={{ color: "#58595B" }}
+              >
+                Size
+              </h3>
+              <div className="single_category_details_brands_media_query">
+                {size.map((size) => (
+                  <div key={size}>
+                    <input
+                      type="checkbox"
+                      value={size}
+                      onChange={handleSizeChange}
+                      checked={selectedSize === size}
+                    />
+                    <label>{size}</label>
+                  </div>
+                ))}
+              </div>
+              <h3 className="single_category_details_h3_media_query">
+                Sort By
+              </h3>
+              <select
+                onChange={handleSortingChange}
+                style={{ width: "71%", height: "29px", outline: "none" }}
+              >
+                <option value="">Select Sorting options</option>
+                <option value='{"price":1}'>Price Low to High</option>
+                <option value='{"price":-1}'>Price High to Low</option>
+                <option value='{"name":1}'>A-Z</option>
+                <option value='{"ratings":-1}'>Top Rated</option>
+              </select>
             </div>
-            <div
-              style={{
-                backgroundColor: "#58595B",
-                height: "0.5px",
-                width: "95%",
-                marginTop: "17px",
-              }}
-            ></div>
-            <h3
-              className="single_category_details_h3_media_query"
-              style={{ color: "#58595B" }}
-            >
-              Size
-            </h3>
-            <div className="single_category_details_brands_media_query">
-              {size.map((size) => (
-                <div key={size}>
-                  <input
-                    type="checkbox"
-                    value={size}
-                    onChange={handleSizeChange}
-                    checked={selectedSize === size}
-                  />
-                  <label>{size}</label>
-                </div>
-              ))}
-            </div>
-            <h3 className="single_category_details_h3_media_query">Sort By</h3>
-            <select
-              onChange={handleSortingChange}
-              style={{ width: "71%", height: "29px", outline: "none" }}
-            >
-              <option value="">Select Sorting options</option>
-              <option value='{"price":1}'>Price Low to High</option>
-              <option value='{"price":-1}'>Price High to Low</option>
-              <option value='{"name":1}'>A-Z</option>
-              <option value='{"ratings":-1}'>Top Rated</option>
-            </select>
           </div>
-        </div>
+        ) : (
+          <div className="mobile_view">
+            <div className="mobile_view_options">
+              {showMobileFilters && (
+                <div className="mobile_filters">
+                  <h2
+                    className="single_category_details_h3_media_query"
+                    style={{ color: "#58595B" }}
+                  >
+                    Brands
+                  </h2>
+                  <div className="single_category_details_brands_media_query">
+                    {brands.map((brand) => (
+                      <div key={brand}>
+                        <input
+                          type="checkbox"
+                          id={brand}
+                          value={brand}
+                          onChange={handleBrandChange}
+                          checked={selectedBrand === brand}
+                        />
+                        <label htmlFor={brand}>{brand}</label>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div
+                    style={{
+                      backgroundColor: "#58595B",
+                      height: "0.5px",
+                      width: "95%",
+                      marginTop: "17px",
+                    }}
+                  ></div>
+                  <h3
+                    className="single_category_details_h3_media_query"
+                    style={{ color: "#58595B" }}
+                  >
+                    Size
+                  </h3>
+                  <div className="single_category_details_brands_media_query">
+                    {size.map((size) => (
+                      <div key={size}>
+                        <input
+                          type="checkbox"
+                          value={size}
+                          onChange={handleSizeChange}
+                          checked={selectedSize === size}
+                        />
+                        <label>{size}</label>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {showMobileSorting && (
+                <div className="mobile_sorting">
+                  <h3 className="single_category_details_h3_media_query">
+                    Sort By
+                  </h3>
+                  <select
+                    onChange={handleSortingChange}
+                    style={{ width: "71%", height: "29px", outline: "none" }}
+                  >
+                    <option value="">Select Sorting options</option>
+                    <option value='{"price":1}'>Price Low to High</option>
+                    <option value='{"price":-1}'>Price High to Low</option>
+                    <option value='{"name":1}'>A-Z</option>
+                    <option value='{"ratings":-1}'>Top Rated</option>
+                  </select>
+                </div>
+              )}
+            </div>
+
+            <div className="mobile_controls">
+              <button
+                className="filter_button"
+                onClick={() => setShowMobileFilters(!showMobileFilters)}
+              >
+                FILTER
+              </button>
+              <button
+                className="sort_button"
+                onClick={() => setShowMobileSorting(!showMobileSorting)}
+              >
+                SORT
+              </button>
+            </div>
+          </div>
+        )}
+
         <div className="right_part">
           {categoryProducts.map((items, index) => (
             <Link

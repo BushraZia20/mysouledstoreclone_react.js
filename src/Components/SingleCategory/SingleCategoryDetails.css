@@ -51,57 +51,107 @@
     display: flex;
     flex-direction: column;
   }
-  .left_part {
-    /* border: 2px solid red; */
+  /* .left_part {
     width: 95%;
     height: 100%;
     padding-left: 10px;
-    /* display: none; */
+    
+  } */
+
+  .left_part {
+    display: none; /* Hide sidebar on mobile */
   }
-  .single_category_details_h3_media_query {
-    color: rgb(88, 89, 91);
-    margin-bottom: 0;
-  }
-  .single_category_details_brands_media_query {
-    height: 90px;
-    overflow: scroll;
-  }
-  .right_part {
-    /* border: 2px solid red; */
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  .single_category_details_media_query {
-    border: 1px solid #dedede;
-    width: 23%;
-    margin-left: 7px;
-    margin-top: 7px;
-    width: 47%;
-    border-radius: 5px;
-  }
-  .single_category_details_image_media_query {
-    height: 260px;
+  .mobile_view {
     width: 100%;
   }
-  .category_details_price_div_media_query {
+  .mobile_controls {
+    /* padding: 10px 0; */
     display: flex;
-    gap: 5px;
-    align-items: center;
-    height: 25px;
-    font-size: 12px !important;
-    color: rgb(88, 92, 112);
+    width: 100%;
+    position: fixed;
+    bottom: 0;
   }
-  .category_details_h5_media_query {
-    margin: 0;
-    font-size: 12px !important;
-    padding: 5px;
-    color: #585c70;
-    height: 50px !important;
+  .filter_button,
+  .sort_button {
+    display: block;
+    width: 100%;
+    /* margin: 10px 0; */
+    background-color: #f1f1f1;
+    color: #58595b;
+    padding: 15px;
+    border: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
   }
-  .category_details_mrp_media_query {
-    font-size: 13px !important;
-    color: rgb(115, 117, 123);
-  }
+}
+.filter_button {
+  border-right: 1px solid #939699;
+}
+.mobile_filters,
+.mobile_sorting {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  /* margin-bottom: 15px; */
+}
+
+.mobile_filters h2,
+.mobile_sorting h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.mobile_view_options {
+  position: fixed;
+  width: 100%;
+  bottom: 48px;
+  left: 1px;
+}
+
+.single_category_details_h3_media_query {
+  color: rgb(88, 89, 91);
+  margin-bottom: 0;
+}
+.single_category_details_brands_media_query {
+  height: 90px;
+  overflow: scroll;
+}
+.right_part {
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.single_category_details_media_query {
+  border: 1px solid #dedede;
+  width: 23%;
+  margin-left: 7px;
+  margin-top: 7px;
+  width: 47%;
+  border-radius: 5px;
+}
+.single_category_details_image_media_query {
+  height: 260px;
+  width: 100%;
+}
+.category_details_price_div_media_query {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  height: 25px;
+  font-size: 12px !important;
+  color: rgb(88, 92, 112);
+}
+.category_details_h5_media_query {
+  margin: 0;
+  font-size: 12px !important;
+  padding: 5px;
+  color: #585c70;
+  height: 50px !important;
+}
+.category_details_mrp_media_query {
+  font-size: 13px !important;
+  color: rgb(115, 117, 123);
 }
