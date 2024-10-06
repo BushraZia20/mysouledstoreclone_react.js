@@ -185,90 +185,94 @@ const WomenCategoryDetails = () => {
             </div>
           </div>
         ) : (
-          <div className="mobile_controls">
-            <button
-              className="filter_button"
-              onClick={() => setShowMobileFilters(!showMobileFilters)}
-            >
-              FILTER
-            </button>
-            <button
-              className="sort_button"
-              onClick={() => setShowMobileSorting(!showMobileSorting)}
-            >
-              SORT
-            </button>
+          <div className="mobile_view">
+            <div className="mobile_view_options">
+              {showMobileFilters && (
+                <div className="mobile_filters">
+                  <h2
+                    className="single_category_details_h3_media_query"
+                    style={{ color: "#58595B" }}
+                  >
+                    Brands
+                  </h2>
+                  <div className="single_category_details_brands_media_query">
+                    {brands.map((brand) => (
+                      <div key={brand}>
+                        <input
+                          type="checkbox"
+                          id={brand}
+                          value={brand}
+                          onChange={handleBrandChange}
+                          checked={selectedBrand === brand}
+                        />
+                        <label htmlFor={brand}>{brand}</label>
+                      </div>
+                    ))}
+                  </div>
 
-            {showMobileFilters && (
-              <div className="mobile_filters">
-                <h2
-                  className="single_category_details_h3_media_query"
-                  style={{ color: "#58595B" }}
-                >
-                  Brands
-                </h2>
-                <div className="single_category_details_brands_media_query">
-                  {brands.map((brand) => (
-                    <div key={brand}>
-                      <input
-                        type="checkbox"
-                        id={brand}
-                        value={brand}
-                        onChange={handleBrandChange}
-                        checked={selectedBrand === brand}
-                      />
-                      <label htmlFor={brand}>{brand}</label>
-                    </div>
-                  ))}
+                  <div
+                    style={{
+                      backgroundColor: "#58595B",
+                      height: "0.5px",
+                      width: "95%",
+                      marginTop: "17px",
+                    }}
+                  ></div>
+                  <h3
+                    className="single_category_details_h3_media_query"
+                    style={{ color: "#58595B" }}
+                  >
+                    Size
+                  </h3>
+                  <div className="single_category_details_brands_media_query">
+                    {size.map((size) => (
+                      <div key={size}>
+                        <input
+                          type="checkbox"
+                          value={size}
+                          onChange={handleSizeChange}
+                          checked={selectedSize === size}
+                        />
+                        <label>{size}</label>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              )}
 
-                <div
-                  style={{
-                    backgroundColor: "#58595B",
-                    height: "0.5px",
-                    width: "95%",
-                    marginTop: "17px",
-                  }}
-                ></div>
-                <h3
-                  className="single_category_details_h3_media_query"
-                  style={{ color: "#58595B" }}
-                >
-                  Size
-                </h3>
-                <div className="single_category_details_brands_media_query">
-                  {size.map((size) => (
-                    <div key={size}>
-                      <input
-                        type="checkbox"
-                        value={size}
-                        onChange={handleSizeChange}
-                        checked={selectedSize === size}
-                      />
-                      <label>{size}</label>
-                    </div>
-                  ))}
+              {showMobileSorting && (
+                <div className="mobile_sorting">
+                  <h3 className="single_category_details_h3_media_query">
+                    Sort By
+                  </h3>
+                  <select
+                    onChange={handleSortingChange}
+                    style={{ width: "71%", height: "29px", outline: "none" }}
+                  >
+                    <option value="">Select Sorting options</option>
+                    <option value='{"price":1}'>Price Low to High</option>
+                    <option value='{"price":-1}'>Price High to Low</option>
+                    <option value='{"name":1}'>A-Z</option>
+                    <option value='{"ratings":-1}'>Top Rated</option>
+                  </select>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
 
-            {showMobileSorting && (
-              <div className="mobile_sorting">
-                <h3 className="single_category_details_h3_media_query">
-                  Sort By
-                </h3>
-                <select
-                  onChange={handleSortingChange}
-                  style={{ width: "71%", height: "29px", outline: "none" }}
-                >
-                  <option value="">Select Sorting options</option>
-                  <option value='{"price":1}'>Price Low to High</option>
-                  <option value='{"price":-1}'>Price High to Low</option>
-                  <option value='{"name":1}'>A-Z</option>
-                  <option value='{"ratings":-1}'>Top Rated</option>
-                </select>
-              </div>
-            )}
+            <div className="mobile_controls">
+              <button
+                className="filter_button"
+                onClick={() => setShowMobileFilters(!showMobileFilters)}
+              >
+                FILTER
+              </button>
+              <button
+                className="sort_button"
+                onClick={() => setShowMobileSorting(!showMobileSorting)}
+              >
+                SORT
+              </button>
+            </div>
           </div>
         )}
 
